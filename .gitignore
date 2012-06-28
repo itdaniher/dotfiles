@@ -1,0 +1,12 @@
+/*
+!.vimrc
+!.tmux.conf
+!.zshrc
+!.gitconfig
+!.gitignore
+!.gitmodules
+!.zshuery
+
+!.ssh
+/.ssh/*
+!.ssh/config.asc
