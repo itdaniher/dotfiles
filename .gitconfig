@@ -1,0 +1,11 @@
+[user]
+	name = Ian Daniher
+	email = it.daniher@gmail.com
+[github]
+	user = itdaniher
+[alias]
+	lg = log --abbrev-commit --format=oneline
+	wdiff = diff --color-words
+	changes = log --follow -p 
+[receive]
+	denyCurrentBranch = ignore
