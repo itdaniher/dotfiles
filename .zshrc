@@ -6,7 +6,7 @@ load_correction
 
 bindkey '^R' history-incremental-search-backward
 
-prompts '%m %{$fg_bold[green]%}$(COLLAPSED_DIR)%{$reset_color%}$(virtualenv_info) %{$fg[yellow]%}$(prompt_char)%{$reset_color%} '
+prompts '%{$fg_bold[green]%}$(COLLAPSED_DIR)%{$reset_color%}$(virtualenv_info) %{$fg[yellow]%}$(prompt_char)%{$reset_color%} '
 
 zstyle ':completion:*' menu select
 
@@ -29,4 +29,5 @@ fi
 
 export PATH=$PATH:~/scripts
 
-alias scp='scp -rv'
+alias scp='scp -r'
+alias pgrep='pgrep -lf'
