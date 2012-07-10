@@ -23,7 +23,7 @@ if [[ $IS_MAC -eq 1 ]]; then
 	export PATH=$PATH:/usr/local/CrossPack-AVR/bin
 	export PATH=$PATH:/usr/local/sbin
 	alias ls="gls $LS_OPTIONS" 
-	alias ld="otool -L"
+	alias ldd="otool -L"
 	alias pgrep="ps -a | grep"
 else
 	export LD_LIBRARY_PATH=/usr/local/lib
