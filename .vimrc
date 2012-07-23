@@ -1,3 +1,4 @@
+set nu
 syn on
 set t_Co=256
 
