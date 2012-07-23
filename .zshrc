@@ -33,3 +33,5 @@ fi
 
 export PATH=$PATH:~/scripts
 alias scp='scp -r'
+
+source .zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
