@@ -1,3 +1,4 @@
+source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zshuery/zshuery.sh
 load_defaults
 load_aliases
@@ -34,4 +35,3 @@ fi
 export PATH=$PATH:~/scripts
 alias scp='scp -r'
 
-source .zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
