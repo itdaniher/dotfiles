@@ -1,6 +1,7 @@
 set nu
 syn on
 set t_Co=256
+colorscheme zenburn
 
 set nocompatible "Unset because no one needs vi compatiblity
 
