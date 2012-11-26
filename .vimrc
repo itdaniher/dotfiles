@@ -3,6 +3,8 @@ syn on
 set t_Co=256
 colorscheme zenburn
 
+au BufNewFile,BufRead *.xc setf xc
+
 set nocompatible "Unset because no one needs vi compatiblity
 
 " Gvim settings
