@@ -7,7 +7,7 @@ load_correction
 
 bindkey '^R' history-incremental-search-backward
 
-prompts '%{$fg_bold[green]%}$(COLLAPSED_DIR)%{$reset_color%}$(virtualenv_info) %{$fg[yellow]%}$(prompt_char)%{$reset_color%} '
+prompts '%{$fg_bold[green]%}$DIR%{$reset_color%}$(virtualenv_info) %{$fg[yellow]%}$(prompt_char)%{$reset_color%} '
 
 zstyle ':completion:*' menu select
 
@@ -19,19 +19,13 @@ chpwd() {
 
 export LS_OPTIONS="--color=auto -hF"
 
-if [[ $IS_MAC -eq 1 ]]; then
-	export PATH=$PATH:~/Library/Haskell/bin
-	export PATH=$PATH:/usr/local/CrossPack-AVR/bin
-	export PATH=$PATH:/usr/local/sbin
-	alias ls="gls $LS_OPTIONS" 
-	alias ldd="otool -L"
-	alias pgrep="ps -a | grep"
-else
-	export LD_LIBRARY_PATH=/usr/local/lib
-	alias ls="ls $LS_OPTIONS"
-	alias pgrep="pgrep -lf"
-fi
+export LD_LIBRARY_PATH=/usr/local/lib
+alias ls="ls $LS_OPTIONS"
+alias pgrep="pgrep -lf"
+
+[ -z "$PS1" ] && return
 
 export PATH=$PATH:~/scripts
 alias scp='scp -r'
-
+xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+synclient VertHysteresis=100
