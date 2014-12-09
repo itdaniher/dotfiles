@@ -9,3 +9,5 @@
 	changes = log --follow -p 
 [receive]
 	denyCurrentBranch = ignore
+[push]
+	default = simple

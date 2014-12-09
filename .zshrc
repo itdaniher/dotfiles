@@ -27,5 +27,5 @@ alias pgrep="pgrep -lf"
 
 export PATH=$PATH:~/scripts
 alias scp='scp -r'
-xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-synclient VertHysteresis=100
+
+export XAUTHORITY=~/.Xauthority
