@@ -3,7 +3,9 @@ syn on
 set t_Co=256
 colorscheme zenburn
 
-au BufNewFile,BufRead *.xc setf xc
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
 
 set nocompatible "Unset because no one needs vi compatiblity
 
@@ -125,5 +127,4 @@ augroup END
 augroup markdown
     au! BufRead,BufNewFile *.mkd   setfiletype mkd
 augroup END
-
 autocmd BufRead *.py nmap <F5> :!python %<CR>
