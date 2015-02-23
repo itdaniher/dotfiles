@@ -322,7 +322,7 @@ class ADB(object):
         Pulls a remote file
         adb pull remote local
         """
-        self.run_cmd('pull \"%s\" \"%s\"' % (remote,local) )
+        self.run_cmd('pull %s %s' % (remote,local) )
         if "bytes in" in self.__error:
             self.__output = self.__error
             self.__error = None
@@ -333,7 +333,7 @@ class ADB(object):
         Push a local file
         adb push local remote
         """
-        self.run_cmd('push \"%s\" \"%s\"' % (local,remote) )
+        self.run_cmd('push %s %s' % (local,remote) )
         return self.__output
 
     def shell_command(self,cmd):
