@@ -197,7 +197,7 @@ class ADB(object):
         error = 0
         #Clear existing list of devices
         self.__devices = None
-        self.run_cmd("devices")
+        self.run_cmd("devices -l")
         device_dict =  {}
         if self.__error is not None:
             return None
@@ -205,11 +205,12 @@ class ADB(object):
             n = 0
             output_list = self.__output.split("\n")
             for line in output_list:
-                pattern = re.compile(r"([^\s]+)\s+device$")
-                device = pattern.findall(line)
-                if device:
-                    device_dict[n] = device[0]
-                    n += 1
+                l = line.split(' ')
+                if ('device' in l) or ('recovery' in l):
+                    device = line.split(' ')[-1]
+                    if device:
+                        device_dict[n] = device
+                        n += 1
         except:
             self.__devices = None
             error = 1
