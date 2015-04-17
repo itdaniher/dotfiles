@@ -6,9 +6,10 @@ set_bar(){
             do
                 xsetroot -name "Bat. $(awk 'sub(/,/,"") {print $3, $4}' <(acpi -b)) \
                 | Vol. $(awk '/\%/ { gsub(/[\[\]]/,""); print $5, $6}' <(amixer get Master)) \
+                | CPU. $(cpupower frequency-info | grep current\ CPU | awk '{print $5$6}') \
                 | $(date +"%a, %b %d %R")"
               sleep 1
          done &
 }
-set_bar&disown
+set_bar
 dwm

@@ -11,21 +11,23 @@ prompts '%{$fg_bold[green]%}$DIR%{$reset_color%}$(virtualenv_info) %{$fg[yellow]
 
 zstyle ':completion:*' menu select
 
-export EDITOR='vim'
-
 chpwd() {
     update_terminal_cwd
 }
 
-export LS_OPTIONS="--color=auto -hF"
 
-export LD_LIBRARY_PATH=/usr/local/lib
 alias ls="ls $LS_OPTIONS"
 alias pgrep="pgrep -lf"
+alias scp='scp -r'
 
 [ -z "$PS1" ] && return
 
-export PATH=$PATH:~/scripts
-alias scp='scp -r'
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+export PATH=$PATH:~/scripts:/opt/Qt5.4.0/5.4/gcc_64/bin/
 
 export XAUTHORITY=~/.Xauthority
+export LS_OPTIONS="--color=auto -hF"
+export EDITOR='vim'
+
+export ANDROID_HOME=/opt/android-sdk-linux
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools
